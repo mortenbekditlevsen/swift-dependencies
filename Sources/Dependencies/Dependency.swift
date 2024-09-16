@@ -98,7 +98,7 @@
   }
 #else
   @propertyWrapper
-  public struct Dependency<Value>: Sendable, _HasInitialValues {
+public struct Dependency<Value: Sendable>: Sendable, _HasInitialValues {
     let initialValues: DependencyValues
     private let keyPath: KeyPath<DependencyValues, Value> & Sendable
     private let filePath: StaticString
